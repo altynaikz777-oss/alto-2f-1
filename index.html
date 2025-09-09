@@ -9,10 +9,10 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Order summary card</title>
+    <title>Frontend Mentor | Results summary component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -20,106 +20,179 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        align-content: space-around;
-        background: url("pattern-background-desktop.svg") no-repeat center top;
-        background-color: hsl(225, 100%, 94%);
-      }
-      .button {
-        background-color: hsl(245, 75%, 52%);
-        color: white;
-        width: 350px;
-        height: 50px;
-        border-radius: 10px;
-        margin-bottom: 0px;
-        box-shadow: 0px 15px 20px hsl(229, 70%, 88%);
+        background-color: hsl(221, 100%, 96%);
+        margin-top: 200px;
+        border-radius: 15px;
       }
       .container {
         display: flex;
+        flex-direction: row;
+        width: 750px;
+        height: 450px;
+        background-color: white;
+        border-radius: 15px;
+      }
+      .container1 {
+        display: flex;
         flex-direction: column;
+        background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
         justify-content: center;
         align-items: center;
-        align-content: space-around;
-        background-color: white;
-        width: 450px;
-        margin-top: 40px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        overflow: hidden;
-        height: 650px;
-        min-height: 100vh;
-        border-radius: 10px;
-      }
-      .background {
+        width: 350px;
+        height: 450px;
         border-radius: 20px;
       }
-      .main {
+      .container2 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-around;
+        width: 350px;
+        margin-left: 25px;
+      }
+      .reaction {
+        background-color: hsl(0, 100%, 93%);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        color: red;
+      }
+      .memory {
+        background-color: hwb(39 89% 0%);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        color: orange;
+      }
+      .verbal {
+        background-color: hsl(167, 66%, 93%);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        color: green;
+      }
+      .visual {
+        background-color: hsl(234, 74%, 90%);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
         /*justify-content: center;*/
         align-items: center;
-        background-color: hsl(225, 100%, 98%);
-        width: 350px;
+        color: blue;
+      }
+      .button {
+        background-color: hsl(224, 30%, 27%);
+        border-radius: 25px;
+        color: white;
+        padding: 5px 30px;
+        height: 50px;
+        width: 250px;
+        margin-left: 50px;
+        /*border: none;*/
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: background 0, 3s;
+      }
+      .button:hover {
+        background-color: blue;
+      }
+      .circle {
+        border-radius: 50%;
+        background-color: hsla(256, 72%, 46%, 1);
+        width: 100px;
         height: 100px;
-        justify-content: space-evenly;
-        margin: 20px 0;
-        border-radius: 10px;
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(hsl(234, 59%, 43%), hsla(241, 80%, 47%, 0));
+        margin-top: 50px;
       }
-
-      .text {
-        font-size: 18px;
+      .result {
+        margin-top: 10px;
+        color: white;
+        display: flex;
+        align-items: start;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(196, 194, 194);
+      }
+      .great {
+        color: white;
+        font-family: Hanken Grotesk;
+        font-size: 25px;
+      }
+      .number {
+        margin-left: 170px;
+        color: black;
+      }
+      .number1 {
+        margin-left: 185px;
+        color: black;
+      }
+      .word {
+        margin-left: 10px;
+      }
+      h1 {
+        font-size: 60px;
+        color: white;
+        margin-top: 10px;
+        font-family: Hanken Grotesk;
+      }
+      .circle1 {
+        margin-top: -50px;
+        color: rgb(183, 172, 172);
+      }
+      .font {
+        color: rgb(196, 194, 194);
+      }
+      span {
         color: grey;
       }
-      .olx {
-        margin-bottom: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-
-      .grey {
-        color: grey;
-        font-family: sans-serif;
-        margin-bottom: 55px;
-        margin-top: 25px;
-        background-color: none;
-        font-size: medium;
-      }
-
-      .meow {
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: -200px;
-        margin-top: -200px;
+      .summary {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="olx">
-        <img src="illustration-hero.svg" />
-        <h1>Order Summary</h1>
-        <p class="text">
-          You can now listen to millions of songs,<br />
-          audiobooks, and podcasts on any device <br />anywhere you like!
-        </p>
-        <div class="main">
-          <img src="icon-music.svg" />
-          <div class="cherry">
-            <strong>Annual Plan</strong>
-            <br />$59.99/year
-          </div>
-          <div>
-            <a href="#">Change</a>
-          </div>
+      <div class="container1">
+        <strong class="result">Your Result</strong>
+        <div class="circle">
+          <h1>76</h1>
+          <br />
+          <p class="circle1">of 100</p>
         </div>
+        <h3 class="great">Great</h3>
+        <p class="font">
+          You scored higher than 65% of<br />
+          the people who have taken<br />
+          these tests.
+        </p>
       </div>
-      <div class="meow">
-        <button class="button"><h3>Proceed to Payment</h3></button>
-        <button class="grey">Cancel Order</button>
+      <div class="container2">
+        <h3 class="summary">Summary</h3>
+        <div class="reaction">
+          <img src="icon-reaction.svg" />
+          <strong class="word">Reaction</strong>
+          <strong class="number">80</strong> <span>/ 100</span>
+        </div>
+        <div class="memory">
+          <img src="icon-memory.svg" />
+          <strong class="word">Memory</strong>
+          <strong class="number">92 </strong><span>/ 100</span>
+        </div>
+        <div class="verbal">
+          <img src="icon-verbal.svg" />
+          <strong class="word">Verbal </strong>
+          <strong class="number1">61</strong><span>/ 100</span>
+        </div>
+        <div class="visual">
+          <img src="icon-visual.svg" />
+          <strong class="word">Visual</strong>
+          <strong class="number1">72</strong><span>/ 100</span>
+        </div>
+        <button class="button">Continue</button>
       </div>
     </div>
   </body>
