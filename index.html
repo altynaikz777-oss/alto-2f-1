@@ -12,53 +12,34 @@
         align-items: center;
         height: 100vh;
       }
-      @media(max-width: 600px) {
       .container {
         background-color: rgb(244, 244, 244);
-        width: 100vw;
-        height: 100vh;
-        margin-left: 0px;
-        border-radius: 0;
+        width: 600px;
+        min-height: 800px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         position: relative;
-      }
-      .folders,.chat1,.chat2,.chat3,.chat4,.chat5,.final{
-        width: 100vw;
-    min-width: 0;
-    left: 0;
-      }
-      .search-bar input,
-  .input {
-    width: 90vw;
-    font-size: 16px;
-  }
-  .header {
-    padding: 5px;
-  }}
-      .tonti {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-      .plus {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
-      .note {
-        width: 30px;
-        height: 30px;
+        overflow: hidden;
       }
       .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        padding: 20px 30px 10px 30px;
         border-bottom: 1px solid grey;
       }
       .stories {
         display: flex;
         align-items: center;
         gap: 10px;
+      }
+      .tonti {
+        cursor: pointer;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 0 0 4px cyan;
+        animation: blue-border-spin 2s linear infinite;
       }
       @keyframes blue-border-spin {
         0% {
@@ -70,30 +51,21 @@
           transform: rotate(360deg);
         }
       }
-      .tonti {
-        cursor: pointer;
-        border-color: 10px solid cyan;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        box-shadow: 0 0 0 4px cyan;
-      }
       .plus {
         display: flex;
-        margin-right: 70px;
         align-items: center;
+        gap: 10px;
       }
       .plus1 {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
+        width: 30px;
+        height: 30px;
       }
       .note {
-        width: 40px;
+        width: 30px;
         height: 30px;
       }
       .search-bar {
-        padding: 10px;
+        padding: 20px 30px 10px 30px;
         position: relative;
         display: flex;
         justify-content: center;
@@ -101,14 +73,14 @@
         margin-top: 10px;
       }
       .search-bar input {
-        width: 400px;
-        padding: 10px;
+        width: 100%;
+        max-width: 500px;
+        padding: 10px 40px 10px 40px;
         border: none;
         border-radius: 10px;
         background-color: #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        text-align: center;
+        font-size: 18px;
       }
       .search-bar input:focus {
         outline: none;
@@ -116,284 +88,183 @@
       }
       .search-icon {
         position: absolute;
-        width: 50px;
-        height: 40px;
-        margin-right: 10px;
-        margin-top: -20px;
-        position: absolute;
-        right: 170px;
-        left: 170px;
-        color: #e0e0e0;
-      }
-      .input {
-        width: 400px;
-        padding: 10px;
-        border: none;
-        border-radius: 10px;
-        background-color: #e0e0e0;
-        padding-right: 40px;
-        text-align: center;
-        font-size: 20px;
-      }
-      .edit {
-        color: rgba(25, 70, 219, 0.928);
-        cursor: pointer;
-        font-family: sans-serif;
-      }
-      .main {
-        color: rgba(25, 70, 219, 0.928);
-        border-bottom: 1px solid rgba(25, 70, 219, 0.928);
-        border-width: 5px;
-        padding-bottom: 5px;
-        border-radius: 5px;
+        left: 45px;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
       }
       .folders {
         display: flex;
-        gap: 20px;
-        padding: 10px;
+        gap: 30px;
+        padding: 10px 30px;
         font-size: 20px;
         font-family: sans-serif;
-        justify-content: space-evenly;
-        margin-left: -20px;
+        justify-content: flex-start;
         margin-top: 10px;
-        width: 400px;
-        /*margin: 5px auto 0 auto;*/
-        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid grey;
+      }
+      .main {
+        color: rgba(25, 70, 219, 0.928);
+        border-bottom: 2px solid rgba(25, 70, 219, 0.928);
+        padding-bottom: 5px;
+        border-radius: 5px;
       }
       .grey {
         color: grey;
       }
       .heart {
-        width: 25px;
-        height: 15px;
-        margin-right: 5px;
-      }
-      .archive {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-left: 10px;
-        margin-top: 10px;
-      }
-      .alto {
-        display: flex;
-        align-items: center;
-      }
-      .chat1 {
-        border-bottom: 0.5px solid grey;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: absolute;
-        margin-top: 50px;
-        width: 500px;
-        height: 80px;
-        cursor:pointer;
-      }
-      .bottom {
-        display: flex;
-        align-items: center;
-        width: 300px;
-        margin-left: 10px;
-        margin-top: -25px;
-        color: grey;
-      }
-      .text1 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 10px;
-      }
-      .monkeys {
-        width: 50px;
-        height: 50px;
-        border-radius: 10px;
+        width: 20px;
+        height: 16px;
         margin-left: 5px;
-        margin-top: -5px;
       }
-      .chat2 {
+      .chats {
+        margin-top: 20px;
+        padding: 0 30px;
+      }
+      .chat1,
+      .chat2,
+      .chat3,
+      .chat4,
+      .chat5 {
         border-bottom: 0.5px solid grey;
+        width: 100%;
+        min-width: 0;
+        height: 80px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        position: absolute;
-        margin-top: 150px;
-        width: 500px;
-        height: 80px;
         cursor: pointer;
+        position: relative;
+        margin-bottom: 0;
       }
-      .text2 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 15px;
-        margin-top: -20px;
-      }
-      .time {
-        position: absolute;
-        right: 10px;
-        color: grey;
-        position: absolute;
-        top: 10px;
-      }
-      .gaziz {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-left: 5px;
-        margin-top: -5px;
-      }
-      .chat3 {
-        border-bottom: 0.5px solid grey;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: absolute;
-        margin-top: 250px;
-        width: 500px;
-        height: 80px;
-        cursor: pointer;
-      }
-      .text3 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 15px;
-        margin-top: -20px;
-      }
-      .english {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-left: 5px;
-        margin-top: -5px;
-      }
-      .chat4 {
-        border-bottom: 0.5px solid grey;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: absolute;
-        margin-top: 350px;
-        width: 500px;
-        height: 80px;
-        cursor: pointer;
-      }
-      .text4 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 15px;
-        margin-top: -20px;
-      }
+      .archive,
+      .monkeys,
+      .gaziz,
+      .english,
       .aktorgyn {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        margin-left: 5px;
-        margin-top: -5px;
+        margin-right: 15px;
       }
-      .chat5 {
-        border-bottom: 0.5px solid grey;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: absolute;
-        margin-top: 170px;
-        width: 500px;
-        height: 80px;
-        cursor: pointer;
+      .monkeys {
+        border-radius: 10px;
       }
+      .text1,
+      .text2,
+      .text3,
+      .text4,
       .text5 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 15px;
-        margin-top: -20px;
+        margin-left: 10px;
+        flex: 1;
       }
-      .final1{
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        color: grey;
+        font-size: 14px;
+        width: 100%;
+      }
+      .time {
+        margin-left: auto;
+        color: grey;
+        font-size: 13px;
+      }
+      .unread {
+        background-color: rgba(25, 70, 219, 0.928);
+        border-radius: 20px;
+        width: 30px;
+        height: 20px;
+        padding: 5px;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+        margin-left: 10px;
+      }
+      .final {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 33.33%;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .final2{
-        position: absolute;
-        bottom: 0;
-        left: 33.33%;
-        width: 33.33%;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .final3{
-        position: absolute;
-        bottom: 0;
-        left: 66.66%;
-        width: 33.33%;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .contacts{
-        width: 30px;
-        height: 30px;
-        margin-top: -5px;
-        margin-bottom: 5px;
-      }
-      .calls{
-        width: 75px;
-        height: 60px;
-      }
-      .settings{
-        width: 75px;
-        height: 60px;
-      }
-      .final{
-        position: absolute;
-        bottom: 0;
-        width: 500px;
-        height: 60px;
+        width: 100%;
+        height: 70px;
         display: flex;
         border-top: 1px solid grey;
-        background-color: rgba(241,241,241,255);
+        background-color: rgba(241, 241, 241, 255);
         align-items: center;
+        justify-content: space-around;
+        z-index: 10;
       }
-      .chat1,.chat2,.chat3,.chat4,.chat5{
-        border-bottom: 0.5px solid grey;
-        width:500px;
-        height:80px;
+      .final1,
+      .final2,
+      .final3 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        position: absolute;
-        cursor: pointer;
+        justify-content: center;
+        width: 33.33%;
+        height: 100%;
       }
-      .word{
-        margin-top: -3px;
+      .contacts {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      .calls,
+      .settings {
+        width: 40px;
+        height: 40px;
+      }
+      .word {
         font-family: sans-serif;
-        font-size: xx-small;
-        color:gray;
-        margin-bottom: -5px;
+        font-size: 12px;
+        color: gray;
+        margin-top: 2px;
       }
-      .unread{
-        background-color: rgba(25, 70, 219, 0.928);
-        border-radius: 20px;
-        width:30px;
-        height:20px;
-        padding:5px;
-        color:white;
-        position: absolute;
-        right: 10px;
-        top: 40px;
-        text-align: center;
+      @media (max-width: 600px) {
+        .container {
+          width: 100vw;
+          min-height: 100vh;
+          border-radius: 0;
+        }
+        .header,
+        .search-bar,
+        .folders,
+        .chats {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .search-bar input {
+          width: 90vw;
+          font-size: 16px;
+        }
+        .folders {
+          width: 100vw;
+          gap: 10px;
+          font-size: 16px;
+        }
+        .chat1,
+        .chat2,
+        .chat3,
+        .chat4,
+        .chat5 {
+          width: 100vw;
+          min-width: 0;
+        }
+        .final {
+          width: 100vw;
+        }
       }
     </style>
   </head>
@@ -411,25 +282,23 @@
         </div>
       </div>
       <div class="search-bar">
-        <div>
-          <img
-            src="images/search-icon-2-614x460.png"
-            alt="Search"
-            class="search-icon"
-          />
-        </div>
+        <img
+          src="images/search-icon-2-614x460.png"
+          alt="Search"
+          class="search-icon"
+        />
         <input type="text" placeholder="Search" class="input" />
       </div>
       <div class="folders">
         <div class="main">All Chats</div>
         <div class="grey">English</div>
-        <div class="grey">JIHC <img src="images/heart.png" class="heart" /></div>
+        <div class="grey">
+          JIHC <img src="images/heart.png" class="heart" />
+        </div>
       </div>
       <div class="chats">
         <div class="chat1">
-          <div class="img">
-            <img src="images/archive.PNG" alt="chat1" class="archive" />
-          </div>
+          <img src="images/archive.PNG" alt="chat1" class="archive" />
           <div class="text1">
             <div class="top">
               <h3>Archived Chats</h3>
@@ -437,89 +306,79 @@
             <div class="bottom">
               <span> ENGLISH MIND, </span>
               <div class="alto">
-                <div>
-                  <p>Altynai</p>
-                </div>
-                <div><img src="images/heart.png" class="heart" /></div>
+                <span>Altynai</span>
+                <img src="images/heart.png" class="heart" />
               </div>
             </div>
           </div>
         </div>
         <div class="chat2">
-          <div class="monkeys">
-            <img src="images/1f1.monkeys.jpg" class="monkeys" />
-          </div>
+          <img src="images/1f1.monkeys.jpg" class="monkeys" />
           <div class="text2">
             <div class="top">
               <h3>1F1-Monkeys</h3>
               <span class="time">18:30</span>
             </div>
             <div class="bottom">
-              <p>Teacher:Where are you?</p>
+              <span>Teacher: Where are you?</span>
             </div>
           </div>
         </div>
         <div class="chat3">
-          <div>
-            <img src="images/gaziz.eng.jpg" class="gaziz" />
-          </div>
+          <img src="images/gaziz.eng.jpg" class="gaziz" />
           <div class="text3">
             <div class="top">
               <h3>Gaziz.Eng</h3>
               <span class="time">12:00</span>
-              <div class="unread">34</div>
+              <span class="unread">34</span>
             </div>
             <div class="bottom">
-              <p>
-                IELTS 8.0 Бір досыма 1 жарым <br />айдай көмек беріп,сабақ өтіп
+              <span>
+                IELTS 8.0 Бір досыма 1 жарым айдай көмек беріп, сабақ өтіп
                 жүрдік...
-              </p>
+              </span>
             </div>
           </div>
         </div>
         <div class="chat4">
-          <div>
-            <img src="images/easy.english.jpg" class="english" />
-          </div>
+          <img src="images/easy.english.jpg" class="english" />
           <div class="text4">
             <div class="top">
               <h3>Easy English</h3>
               <span class="time">09:00</span>
             </div>
             <div class="bottom">
-              <p>
+              <span>
                 Hello! Dear students! I am glad to welcome you to my new
                 channel...
-              </p>
+              </span>
             </div>
+          </div>
         </div>
         <div class="chat5">
-          <div>
-            <img src="images/stories.jpg" class="aktorgyn" />
-          </div>
+          <img src="images/stories.jpg" class="aktorgyn" />
           <div class="text5">
             <div class="top">
               <h3>Aktorgyn</h3>
               <span class="time">Yesterday</span>
             </div>
             <div class="bottom">
-              <p>
-                You:aaa
-              </p>
+              <span>You: aaa</span>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="final">
-      <div class="final1">
-     <img src="images/contacts-63.png" alt="Contacts" class="contacts" />
-      <h4 class="word">Contacts</h4>
-      </div>
-      <div class="final2">
-      <img src="images/IMG_7319.jpg" alt="Calls" class="calls" />
-      </div>
-      <div class="final3">
-      <img src="images/IMG_7320.jpg" alt="Settings" class="settings"/>
+      <div class="final">
+        <div class="final1">
+          <img src="images/contacts-63.png" alt="Contacts" class="contacts" />
+          <h4 class="word">Contacts</h4>
+        </div>
+        <div class="final2">
+          <img src="images/IMG_7319.jpg" alt="Calls" class="calls" />
+        </div>
+        <div class="final3">
+          <img src="images/IMG_7320.jpg" alt="Settings" class="settings" />
+        </div>
       </div>
     </div>
   </body>
