@@ -3,382 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telegram</title>
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | 3-column preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend+Deca:wght@100..900&display=swap");
+    </style>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
       body {
-        background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
       }
       .container {
-        background-color: rgb(244, 244, 244);
-        width: 600px;
-        min-height: 800px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        position: relative;
-        overflow: hidden;
-      }
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px 10px 30px;
-        border-bottom: 1px solid grey;
-      }
-      .stories {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .tonti {
-        cursor: pointer;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        box-shadow: 0 0 0 4px cyan;
-        animation: blue-border-spin 2s linear infinite;
-      }
-      @keyframes blue-border-spin {
-        0% {
-          box-shadow: 0 0 0 4px cyan;
-          transform: rotate(0deg);
-        }
-        100% {
-          box-shadow: 0 0 0 4px cyan;
-          transform: rotate(360deg);
-        }
-      }
-      .plus {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .plus1 {
-        width: 30px;
-        height: 30px;
-      }
-      .note {
-        width: 30px;
-        height: 30px;
-      }
-      .search-bar {
-        padding: 20px 30px 10px 30px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-      }
-      .search-bar input {
-        width: 100%;
-        max-width: 500px;
-        padding: 10px 40px 10px 40px;
-        border: none;
-        border-radius: 10px;
-        background-color: #e0e0e0;
-        text-align: center;
-        font-size: 18px;
-      }
-      .search-bar input:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-      .search-icon {
-        position: absolute;
-        left: 45px;
-        width: 24px;
-        height: 24px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #888;
-      }
-      .folders {
-        display: flex;
-        gap: 30px;
-        padding: 10px 30px;
-        font-size: 20px;
-        font-family: sans-serif;
-        justify-content: flex-start;
-        margin-top: 10px;
-        width: 100%;
-        border-bottom: 1px solid grey;
-      }
-      .main {
-        color: rgba(25, 70, 219, 0.928);
-        border-bottom: 2px solid rgba(25, 70, 219, 0.928);
-        padding-bottom: 5px;
-        border-radius: 5px;
-      }
-      .grey {
-        color: grey;
-      }
-      .heart {
-        width: 20px;
-        height: 16px;
-        margin-left: 5px;
-      }
-      .chats {
-        margin-top: 20px;
-        padding: 0 30px;
-      }
-      .chat1,
-      .chat2,
-      .chat3,
-      .chat4,
-      .chat5 {
-        border-bottom: 0.5px solid grey;
-        width: 100%;
-        min-width: 0;
-        height: 80px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        cursor: pointer;
-        position: relative;
-        margin-bottom: 0;
-      }
-      .archive,
-      .monkeys,
-      .gaziz,
-      .english,
-      .aktorgyn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 15px;
-      }
-      .monkeys {
-        border-radius: 10px;
-      }
-      .text1,
-      .text2,
-      .text3,
-      .text4,
-      .text5 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 900px;
+        margin-top: 100px;
         margin-left: 10px;
-        flex: 1;
-      }
-      .top {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-      }
-      .bottom {
-        display: flex;
-        align-items: center;
-        color: grey;
-        font-size: 14px;
-        width: 100%;
-      }
-      .time {
-        margin-left: auto;
-        color: grey;
-        font-size: 13px;
-      }
-      .unread {
-        background-color: rgba(25, 70, 219, 0.928);
         border-radius: 20px;
-        width: 30px;
-        height: 20px;
-        padding: 5px;
-        color: white;
-        text-align: center;
-        font-size: 13px;
-        margin-left: 10px;
+        position: relative;
       }
-      .final {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
+      .container1 {
+        background-color: hsl(31, 77%, 52%);
+        width: 300px;
         display: flex;
-        border-top: 1px solid grey;
-        background-color: rgba(241, 241, 241, 255);
-        align-items: center;
-        justify-content: space-around;
-        z-index: 10;
-      }
-      .final1,
-      .final2,
-      .final3 {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 33.33%;
-        height: 100%;
+        flex-direction: column;
+        height: 500px;
+        border-radius: 10px 0px 0px 10px;
       }
-      .contacts {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 5px;
+      .container2 {
+        background-color: hsl(184, 100%, 22%);
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
       }
-      .calls,
-      .settings {
-        width: 40px;
-        height: 40px;
+      .container3 {
+        background-color: hsl(179, 100%, 13%);
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
+        border-radius: 0px 10px 10px 0px;
       }
-      .word {
-        font-family: sans-serif;
-        font-size: 12px;
-        color: gray;
-        margin-top: 2px;
+      .heading {
+        color: white;
+        font-size: 20px;
+        margin-left: -100px;
+        margin-top: 30px;
+        font-family: Bebas Neue, sans-serif;
+        font-size: 30px;
       }
-      @media (max-width: 600px) {
-        .container {
-          width: 100vw;
-          min-height: 100vh;
-          border-radius: 0;
-        }
-        .header,
-        .search-bar,
-        .folders,
-        .chats {
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        .search-bar input {
-          width: 90vw;
-          font-size: 16px;
-        }
-        .folders {
-          width: 100vw;
-          gap: 10px;
-          font-size: 16px;
-        }
-        .chat1,
-        .chat2,
-        .chat3,
-        .chat4,
-        .chat5 {
-          width: 100vw;
-          min-width: 0;
-        }
-        .final {
-          width: 100vw;
-        }
+      .button1,
+      .button2,
+      .button3 {
+        border-radius: 20px;
+        border-color: white;
+        width: 100px;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        margin-top: 50px;
+        margin-left: -30px;
+        margin-bottom: 20px;
+        background-color: white;
+        position: absolute;
+        bottom: 20px;
+      }
+      .button1:hover,
+      .button2:hover,
+      .button3:hover {
+        opacity: 1;
+        background-color: white;
+        color: black;
+      }
+      .button1:hover {
+        background-color: hsl(31, 77%, 52%);
+      }
+      .button2:hover {
+        background-color: hsl(184, 100%, 22%);
+      }
+      .button3:hover {
+        background-color: hsl(179, 100%, 13%);
+      }
+      .button1 {
+        color: hsl(31, 77%, 52%);
+      }
+      .button2 {
+        color: hsl(184, 100%, 22%);
+      }
+      .button3 {
+        color: hsl(179, 100%, 13%);
+      }
+      .img {
+        margin-top: -70px;
+        margin-left: -150px;
+      }
+      .grey {
+        color: white;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <h4 class="edit">Edit</h4>
-        <div class="stories">
-          <img src="images/stories.jpg" alt="Stories" class="tonti" />
-          <h3>Chats</h3>
-        </div>
-        <div class="plus">
-          <img src="images/plus.jpg" alt="Plus" class="plus1" />
-          <img src="images/note.jpg" alt="note" class="note" />
-        </div>
+      <div class="container1">
+        <img src="images/icon-sedans.svg" class="img" />
+        <h2 class="heading">Sedans</h2>
+        <p class="grey">
+          Choose a sedan for its <br />affordability and excellent<br />
+          fuel economy. Ideal for <br />cruising in the city or on<br />
+          your next road trip.
+        </p>
+        <button class="button button1">Learn More</button>
       </div>
-      <div class="search-bar">
-        <img
-          src="images/search-icon-2-614x460.png"
-          alt="Search"
-          class="search-icon"
-        />
-        <input type="text" placeholder="Search" class="input" />
+      <div class="container2">
+        <img src="images/icon-suvs.svg" class="img" />
+        <h2 class="heading">SUVs</h2>
+        <p class="grey">
+          Take an SUV for its spacious<br />
+          interior, power, and<br />
+          versatility. Perfect for your <br />next family vacation and<br />
+          off-road adventures.
+        </p>
+        <button class="button button2">Learn More</button>
       </div>
-      <div class="folders">
-        <div class="main">All Chats</div>
-        <div class="grey">English</div>
-        <div class="grey">
-          JIHC <img src="images/heart.png" class="heart" />
-        </div>
-      </div>
-      <div class="chats">
-        <div class="chat1">
-          <img src="images/archive.PNG" alt="chat1" class="archive" />
-          <div class="text1">
-            <div class="top">
-              <h3>Archived Chats</h3>
-            </div>
-            <div class="bottom">
-              <span> ENGLISH MIND, </span>
-              <div class="alto">
-                <span>Altynai</span>
-                <img src="images/heart.png" class="heart" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="chat2">
-          <img src="images/1f1.monkeys.jpg" class="monkeys" />
-          <div class="text2">
-            <div class="top">
-              <h3>1F1-Monkeys</h3>
-              <span class="time">18:30</span>
-            </div>
-            <div class="bottom">
-              <span>Teacher: Where are you?</span>
-            </div>
-          </div>
-        </div>
-        <div class="chat3">
-          <img src="images/gaziz.eng.jpg" class="gaziz" />
-          <div class="text3">
-            <div class="top">
-              <h3>Gaziz.Eng</h3>
-              <span class="time">12:00</span>
-              <span class="unread">34</span>
-            </div>
-            <div class="bottom">
-              <span>
-                IELTS 8.0 Бір досыма 1 жарым айдай көмек беріп, сабақ өтіп
-                жүрдік...
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="chat4">
-          <img src="images/easy.english.jpg" class="english" />
-          <div class="text4">
-            <div class="top">
-              <h3>Easy English</h3>
-              <span class="time">09:00</span>
-            </div>
-            <div class="bottom">
-              <span>
-                Hello! Dear students! I am glad to welcome you to my new
-                channel...
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="chat5">
-          <img src="images/stories.jpg" class="aktorgyn" />
-          <div class="text5">
-            <div class="top">
-              <h3>Aktorgyn</h3>
-              <span class="time">Yesterday</span>
-            </div>
-            <div class="bottom">
-              <span>You: aaa</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="final">
-        <div class="final1">
-          <img src="images/contacts-63.png" alt="Contacts" class="contacts" />
-          <h4 class="word">Contacts</h4>
-        </div>
-        <div class="final2">
-          <img src="images/IMG_7319.jpg" alt="Calls" class="calls" />
-        </div>
-        <div class="final3">
-          <img src="images/IMG_7320.jpg" alt="Settings" class="settings" />
-        </div>
+      <div class="container3">
+        <img src="images/icon-luxury.svg" class="img" />
+        <h2 class="heading">Luxury</h2>
+        <p class="grey">
+          Cruise in the best car brands<br />
+          without the bloated prices.<br />Enjoy the enhanced comfort <br />of a
+          luxury rental and arrive <br />in style.
+        </p>
+        <button class="button button3">Learn More</button>
       </div>
     </div>
   </body>
